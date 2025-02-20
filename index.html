@@ -37,7 +37,6 @@
             </div>
             <div class="nav-items">
                 <ul>
-                    <i class="ri-close-large-line"></i>
                     <li><a href="#" class="active-home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#" class="line">Services</a></li>
@@ -77,7 +76,7 @@
                         <a href="#" class="btn btn-primary">
                             Sign up
                         </a>
-                        <a href="#" class="btn btn-mid text">Learn more</a>
+                        <a href="#" class="btn btn-mid">Learn more</a>
                 </div> 
             </div>
         </section>
@@ -350,7 +349,7 @@
 
 
                     <div class="form-container">
-                        <form action="POST">
+                        <form action="POST" novalidate>
                             <div class="input-form">
 
                                 <input type="text" id="name" placeholder="Name" required>
@@ -363,11 +362,11 @@
                             </div>
 
                             <textarea cols="75" rows="15" name="text" id="text" placeholder="Message" required></textarea>
-                        </form>
-                        <div class="send-btn">
+                            <div class="send-btn">
 
-                            <input type="submit" value="Send now">
-                        </div>
+                                <input type="submit" value="Send now">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -423,5 +422,13 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            if (!event.target.checkValidity()) {
+                event.preventDefault();
+                alert('Please fill out all required fields correctly.');
+            }
+        });
+    </script>
 </body>
 </html>

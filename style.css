@@ -516,12 +516,34 @@ ul {
   align-items: center;
   gap: 2rem;
   text-align: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.popular-card::-webkit-scrollbar {
+  height: 8px;
+}
+
+.popular-card::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.popular-card::-webkit-scrollbar-track {
+  background-color: var(--color-light);
+  border-radius: 10px;
 }
 
 .card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: 80%;
+  min-width: 250px;
   background: var(--color-white);
   border-radius: 5px;
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
 }
 
 .img-card {
@@ -789,6 +811,16 @@ ul {
   margin-bottom: 1rem;
 }
 
+input:invalid,
+textarea:invalid {
+  border: 2px solid red;
+}
+
+input:valid,
+textarea:valid {
+  border: 2px solid green;
+}
+
 textarea {
   border: 1px solid #c4c4c4;
   width: 100%;
@@ -1002,6 +1034,7 @@ textarea {
   }
 
   .btn {
+    width: 100%;
     padding: 15px;
   }
 
@@ -1114,26 +1147,11 @@ textarea {
     display: flex;
     overflow-x: auto;
     gap: 10px;
-    /* padding: 10px; */
     scroll-snap-type: x mandatory;
   }
 
-  .popular-card::-webkit-scrollbar {
-    height: 8px;
-  }
-
-  .popular-card::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 10px;
-  }
-
-  .popular-card::-webkit-scrollbar-track {
-    background-color: var(--color-light);
-    border-radius: 10px;
-  }
-
   .card {
-    width: 50%;
+    width: 80%;
     flex-shrink: 0;
     scroll-snap-align: start;
     background: var(--color-white);
