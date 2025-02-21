@@ -936,6 +936,18 @@ textarea {
   gap: 10px;
 }
 
+.footer-content li a {
+  color: var(--color-white);
+}
+
+.social-links div li a {
+  color: var(--color-white);
+}
+
+.social-links div li a i {
+  font-size: 1.1rem;
+}
+
 /* .flex-child1 {
   border: 1px solid;
   margin-right: 50px;
