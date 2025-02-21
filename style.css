@@ -516,8 +516,8 @@ ul {
   align-items: center;
   gap: 2rem;
   text-align: center;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  /* overflow-x: auto;
+  scroll-snap-type: x mandatory;*/
 }
 
 .popular-card::-webkit-scrollbar {
@@ -535,10 +535,10 @@ ul {
 }
 
 .card {
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  width: 80%;
-  min-width: 250px;
+  /* flex-shrink: 0;
+  scroll-snap-align: start; */
+  /* width: 80%; */
+  /* min-width: 250px; */
   background: var(--color-white);
   border-radius: 5px;
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
