@@ -11,6 +11,7 @@
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
     rel="stylesheet"
     />
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
     <title>Document</title>
 </head>
 <body>
@@ -425,7 +426,22 @@
          </section>
     </div>
 
-    <script src="script.js"></script>
+    <div class="auth-container">
+        <h1>Register</h1>
+        <form>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+            <button class="google-btn" id="google-login-btn">
+                <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google logo">
+                <span>Register with Google</span>
+            </button>
+            <p class="toggle-link">Already have an account? Login</p>
+        </form>
+    </div>
+
+    <script src="script.js" defer type="module"></script>
     <script>
         document.querySelector('form').addEventListener('submit', function(event) {
             if (!event.target.checkValidity()) {
@@ -434,5 +450,6 @@
             }
         });
     </script>
+    <script src="main.js"></script>
 </body>
 </html>

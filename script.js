@@ -4,6 +4,7 @@ const mainContent = document.querySelector(".main-content");
 
 navToggle.addEventListener("click", () => {
   navItems.classList.toggle("active");
+  navToggle.classList.toggle("active");
   document.body.classList.toggle("no-scroll");
   mainContent.classList.toggle("blur");
 });
@@ -56,3 +57,50 @@ function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(String(email).toLowerCase());
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleLink = document.querySelector(".toggle-link");
+  const authContainer = document.querySelector(".auth-container");
+  const formTitle = authContainer.querySelector("h1");
+  const submitButton = authContainer.querySelector("button[type='submit']");
+  const form = authContainer.querySelector("form");
+
+  toggleLink.addEventListener("click", () => {
+    const isRegister = formTitle.textContent.includes("Register");
+    formTitle.textContent = isRegister ? "Login" : "Register";
+    submitButton.textContent = isRegister ? "Login" : "Register";
+    toggleLink.textContent = isRegister
+      ? "Don't have an account? Register"
+      : "Already have an account? Login";
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = form.querySelector("#name").value.trim();
+    const email = form.querySelector("#email").value.trim();
+    const password = form.querySelector("#password").value.trim();
+
+    if (formTitle.textContent.includes("Register") && !name) {
+      alert("Name is required.");
+      return;
+    }
+
+    if (!email || !validateEmail(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (!password) {
+      alert("Password is required.");
+      return;
+    }
+
+    alert(`${formTitle.textContent} successful!`);
+    // Optionally, you can submit the form here
+  });
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  }
+});
