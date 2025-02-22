@@ -1025,30 +1025,11 @@ textarea {
   }
 
   .nav-items ul li .auth-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .nav-items ul li .auth-buttons a {
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-  }
-
-  .nav-items ul li .auth-buttons .login-btn {
-    background-color: var(--primary-color);
-    color: var(--color-white);
-  }
-
-  .nav-items ul li .auth-buttons .signup-btn {
-    background-color: var(--color-light);
-    color: var(--color-dark);
+    display: none; /* Hide the register and login buttons */
   }
 
   .contact-btn {
-    display: none;
+    display: none; /* Hide the contact button */
   }
 
   .hero {
