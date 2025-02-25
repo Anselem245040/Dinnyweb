@@ -478,7 +478,7 @@ ul {
 
 .exp-text p {
   margin-left: 5rem;
-  color: var(--color-dark);
+  color: var (--color-dark);
   margin-bottom: 1rem;
 }
 
@@ -528,29 +528,11 @@ ul {
   align-items: center;
   gap: 2rem;
   text-align: center;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.popular-card::-webkit-scrollbar {
-  height: 8px;
-}
-
-.popular-card::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border-radius: 10px;
-}
-
-.popular-card::-webkit-scrollbar-track {
-  background-color: var(--color-light);
-  border-radius: 10px;
 }
 
 .card {
+  width: 350px;
   flex-shrink: 0;
-  scroll-snap-align: start;
-  width: 80%;
-  min-width: 250px;
   background: var(--color-white);
   border-radius: 5px;
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
@@ -960,19 +942,6 @@ textarea {
   font-size: 1.1rem;
 }
 
-/* .flex-child1 {
-  border: 1px solid;
-  margin-right: 50px;
-} */
-/* @media (min-width:1025px) {
-  
-}
-@media (min-width:769px) {
-  
-}
-@media (min-width:481px) {
-  
-} */
 @media (max-width: 900px) {
   .container {
     width: 90%;
@@ -1170,6 +1139,11 @@ textarea {
     width: 100%;
   }
 
+  .swiper {
+    width: 400px;
+    height: 300px;
+  }
+
   .popular-card {
     width: 100%;
     display: flex;
@@ -1280,12 +1254,7 @@ textarea {
   .footer .container .footer-content {
     text-align: center;
   }
-
-  /* .footer h3 {
-    position: relative;
-  } */
-
-  .footer h3::after {
+  n .footer h3::after {
     content: "";
     display: block;
     width: 50px;
@@ -1458,4 +1427,141 @@ body.no-scroll {
 .main-content.blur {
   filter: blur(5px);
   pointer-events: none;
+}
+
+/* Login form */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-light);
+}
+
+.login-container h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.login-container form {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  animation: fade-in 1s forwards;
+}
+
+.login-container form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+}
+
+.login-container form button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container form button:hover {
+  background-color: var(--color-mid);
+}
+
+.login-container .google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #4285f4;
+  color: var(--color-white);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container .google-btn:hover {
+  background-color: #357ae8;
+}
+
+.login-container .toggle-link {
+  margin-top: 1rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  text-align: center;
+}
+
+.mode-toggle {
+  display: none; /* Hide the dark mode toggle button */
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-up {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slide-in-left 1s forwards;
+}
+
+.slide-in-right {
+  animation: slide-in-right 1s forwards;
+}
+
+.slide-in-up {
+  animation: slide-in-up 1s forwards;
+}
+
+.slide-in-down {
+  animation: slide-in-down 1s forwards;
 }

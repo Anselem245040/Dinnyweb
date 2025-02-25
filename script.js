@@ -9,6 +9,15 @@ navToggle.addEventListener("click", () => {
   mainContent.classList.toggle("blur");
 });
 
+document.addEventListener("click", (event) => {
+  if (!navToggle.contains(event.target) && !navItems.contains(event.target)) {
+    navItems.classList.remove("active");
+    navToggle.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+    mainContent.classList.remove("blur");
+  }
+});
+
 const observerOptions = {
   threshold: 0.1,
 };

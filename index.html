@@ -8,10 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+    <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
     rel="stylesheet"
     />
-    <!-- <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"> -->
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -23,8 +28,6 @@
             </div>
 
             <div class="btn">
-                <a href="login.html">Log in</a>
-                <a href="signup.html" class="btn-primary">Register</a>
             </div>
         </div>
     </div>
@@ -39,27 +42,12 @@
             </div>
             <div class="nav-items">
                 <ul>
-                    <li><a href="#" class="active-home">Home</a></li>
+                    <li><a href="#home" class="active-home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#" class="line">Services</a></li>
-                    <li>
-                        <a href="#" class="line">Instructors</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="line">
-                            Courses <i class="ri-arrow-down-s-line"></i>
-                        </a>
-                        <!-- <ul class="dropdown-menu">
-                            <li><a href="#">Course 1</a></li>
-                            <li><a href="#">Course 2</a></li>
-                            <li><a href="#">Course 3</a></li>
-                        </ul> -->
-                    </li>
-                    <li><a href="#" class="line">Blog</a></li>
-                    <li class="auth-buttons">
-                        <a href="login.html" class="login-btn">Log in</a>
-                        <a href="signup.html" class="signup-btn">Sign up</a>
-                    </li>
+                    <li><a href="#services" class="line">Services</a></li>
+                    <li><a href="#instructors" class="line">Instructors</a></li>
+                    <li><a href="#courses" class="line">Courses</a></li>
+                    <li><a href="#blog" class="line">Blog</a></li>
                 </ul>
             </div>
             <a href="#" class="contact-btn">Contact</a>
@@ -68,7 +56,7 @@
     </nav>
 
     <div class="main-content">
-        <section class="hero fade-in" id="hero">
+        <section class="hero fade-in" id="home">
             <div class="container">
                 <div class="hero-content animate-text">
                     <h1 class="hero-heading text-xxl">
@@ -120,7 +108,7 @@
             </div>
         </section>
 
-        <section class="services">
+        <section class="services" id="services">
             <div class="container">
                 <div class="service-content fade-top">
                     <h2>
@@ -184,7 +172,7 @@
             </div>
         </section>
         
-        <section class="experience">
+        <section class="experience" id="experience">
             <div class="container">
                 <div class="exp-flex">
                     <div class="exp-text">
@@ -212,7 +200,7 @@
         </section>
 
         <!-- popular -->
-         <section class="popular">
+         <section class="popular" id="courses">
             <div class="container">
                 <div class="popular-content">
                     <h2>
@@ -221,44 +209,48 @@
                     <p>
                         We have built hospitals, arranged doctor appointments have the diagnose and treat yourem ipsu r aol ad meniam, quis nostrud exercitation.
                     </p>
+                    <div class="swiper">
 
-                    <div class="popular-card">
-                        <div class="card">
-                            <div class="img-card">
-                                <img src="/images/christopher-campbell-rDEOVtE7vOs-unsplash (1).jpg" alt="">
-                            </div>
-                            <span class="content"><i class="ri-book-fill"></i> 35 Lessons</span>
-                            <span class="content">26th April 2021</span>
-                            <p class="content1">Creche</p>
-                            <p class="content2">For anyone validating Framer as a professional prototyping tool.</p>
-                            <div class="enroll">
-                                <a href="#">Enroll Now <i class="ri-arrow-right-line"></i></a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-card">
-                                <img src="/images/christopher-campbell-rDEOVtE7vOs-unsplash (1).jpg" alt="">
-                            </div>
-                            <span class="content"><i class="ri-book-fill"></i> 35 Lessons</span>
-                            <span class="content">26th April 2021</span>
-                            <p class="content1">Creche</p>
-                            <p class="content2">For anyone validating Framer as a professional prototyping tool.</p>
-                            <div class="enroll">
-                                <a href="#">Enroll Now <i class="ri-arrow-right-line"></i></a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-card">
-                                <img src="/images/christopher-campbell-rDEOVtE7vOs-unsplash (1).jpg" alt="">
-                            </div>
-                            <span class="content"><i class="ri-book-fill"></i> 35 Lessons</span>
-                            <span class="content">26th April 2021</span>
+                        <div class="popular-card swiper-slide">
+                            <div class="card swiper-slide">
+                                <div class="img-card">
+                                    <img src="/images/christopher-campbell-rDEOVtE7vOs-unsplash (1).jpg" alt="">
+                                </div>
+                                <span class="content"><i class="ri-book-fill"></i> 35 Lessons</span>
+                                <span class="content">26th April 2021</span>
                                 <p class="content1">Creche</p>
                                 <p class="content2">For anyone validating Framer as a professional prototyping tool.</p>
-
                                 <div class="enroll">
                                     <a href="#">Enroll Now <i class="ri-arrow-right-line"></i></a>
                                 </div>
+                            </div>
+                            <div class="card swiper-slide">
+                                <div class="img-card">
+                                    <img src="/images/christopher-campbell-rDEOVtE7vOs-unsplash (1).jpg" alt="">
+                                </div>
+                                <span class="content"><i class="ri-book-fill"></i> 35 Lessons</span>
+                                <span class="content">26th April 2021</span>
+                                <p class="content1">Creche</p>
+                                <p class="content2">For anyone validating Framer as a professional prototyping tool.</p>
+                                <div class="enroll">
+                                    <a href="#">Enroll Now <i class="ri-arrow-right-line"></i></a>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide">
+                                <div class="img-card">
+                                    <img src="/images/christopher-campbell-rDEOVtE7vOs-unsplash (1).jpg" alt="">
+                                </div>
+                                <span class="content"><i class="ri-book-fill"></i> 35 Lessons</span>
+                                <span class="content">26th April 2021</span>
+                                    <p class="content1">Creche</p>
+                                    <p class="content2">For anyone validating Framer as a professional prototyping tool.</p>
+    
+                                    <div class="enroll">
+                                        <a href="#">Enroll Now <i class="ri-arrow-right-line"></i></a>
+                                    </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>
                     <div class="view">
@@ -272,7 +264,7 @@
             </div>
          </section>
 
-         <section class="video">
+         <section class="video" id="video">
             <div class="container-sm">
                 <div class="video-content">
                     <h2>
@@ -288,7 +280,7 @@
             </div>
          </section>
 
-         <section class="success">
+         <section class="success" id="success">
             <div class="container">
                 <div class="success-content">
                     <h2>
@@ -306,7 +298,7 @@
             </div>
          </section>
 
-         <section class="instructors">
+         <section class="instructors" id="instructors">
             <div class="container">
                 <div class="inst-content">
                     <h2>Instructors & Teachers</h2>
@@ -348,7 +340,7 @@
             </div>
          </section>
 
-         <section class="contact">
+         <section class="contact" id="contact">
             <div class="container">
                 <div class="contact-content">
                     <h2>Contact Us</h2>
@@ -378,7 +370,7 @@
             </div>
          </section>
     <!-- footer -->
-         <section class="footer">
+         <section class="footer" id="footer">
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo flex-child1">
@@ -425,22 +417,8 @@
             </div>
          </section>
     </div>
-
-    <!-- <div class="auth-container">
-        <h1>Register</h1>
-        <form>
-            <input type="text" id="name" placeholder="Name" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Register</button>
-            <button class="google-btn" id="google-login-btn">
-                <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google logo">
-                <span>Register with Google</span>
-            </button>
-            <p class="toggle-link">Already have an account? Login</p>
-        </form>
-    </div> -->
-
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js" defer type="module"></script>
     <script>
         document.querySelector('form').addEventListener('submit', function(event) {
@@ -450,6 +428,5 @@
             }
         });
     </script>
-    <script src="main.js"></script>
 </body>
 </html>
