@@ -18,6 +18,15 @@ document.addEventListener("click", (event) => {
   }
 });
 
+document.querySelectorAll(".nav-items a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navItems.classList.remove("active");
+    navToggle.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+    mainContent.classList.remove("blur");
+  });
+});
+
 const observerOptions = {
   threshold: 0.1,
 };
@@ -112,4 +121,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   }
+
+  document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+        });
+
+        targetElement.classList.add("slide-in-up");
+        setTimeout(() => {
+          targetElement.classList.remove("slide-in-up");
+        }, 1000);
+      }
+    });
+  });
 });
