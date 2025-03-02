@@ -136,7 +136,6 @@ ul {
 .nav-toggle {
   display: none;
   cursor: pointer;
-  width: auto; /* Ensure the width is set to auto */
 }
 
 .nav-toggle i {
@@ -154,22 +153,6 @@ ul {
 
 .nav-toggle.active .ri-close-large-line {
   display: block;
-}
-
-.nav-items {
-  display: none; /* Hide the nav items by default */
-  position: fixed;
-  top: 5.2rem;
-  left: -100%;
-  z-index: 1000;
-  background-color: var(--secondary-color);
-  width: 100%;
-  transition: 0.3s;
-}
-
-.nav-items.active {
-  display: block; /* Show the nav items when active */
-  left: 0;
 }
 
 /* utility classes */
@@ -1033,24 +1016,6 @@ textarea {
   }
 
   .nav-toggle {
-    display: block; /* Ensure the hamburger menu is displayed */
-    width: auto; /* Ensure the width is set to auto */
-  }
-
-  .nav-toggle i {
-    font-size: 2rem;
-    color: var(--color-white);
-  }
-
-  .nav-toggle .ri-close-large-line {
-    display: none;
-  }
-
-  .nav-toggle.active .ri-menu-line {
-    display: none;
-  }
-
-  .nav-toggle.active .ri-close-large-line {
     display: block;
   }
 
