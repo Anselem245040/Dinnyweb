@@ -1,29 +1,31 @@
-const navToggle = document.querySelector(".nav-toggle");
-const navItems = document.querySelector(".nav-items");
-const mainContent = document.querySelector(".main-content");
+document.addEventListener("DOMContentLoaded", function () {
+  const navToggle = document.querySelector(".nav-toggle");
+  const navItems = document.querySelector(".nav-items");
+  const mainContent = document.querySelector(".main-content");
 
-navToggle.addEventListener("click", () => {
-  navItems.classList.toggle("active");
-  navToggle.classList.toggle("active");
-  document.body.classList.toggle("no-scroll");
-  mainContent.classList.toggle("blur");
-});
+  navToggle.addEventListener("click", function () {
+    navToggle.classList.toggle("active");
+    navItems.classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
+    mainContent.classList.toggle("blur");
+  });
 
-document.addEventListener("click", (event) => {
-  if (!navToggle.contains(event.target) && !navItems.contains(event.target)) {
-    navItems.classList.remove("active");
-    navToggle.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-    mainContent.classList.remove("blur");
-  }
-});
+  document.addEventListener("click", function (event) {
+    if (!navToggle.contains(event.target) && !navItems.contains(event.target)) {
+      navItems.classList.remove("active");
+      navToggle.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+      mainContent.classList.remove("blur");
+    }
+  });
 
-document.querySelectorAll(".nav-items a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navItems.classList.remove("active");
-    navToggle.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-    mainContent.classList.remove("blur");
+  document.querySelectorAll(".nav-items a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navItems.classList.remove("active");
+      navToggle.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+      mainContent.classList.remove("blur");
+    });
   });
 });
 
@@ -75,69 +77,3 @@ function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(String(email).toLowerCase());
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleLink = document.querySelector(".toggle-link");
-  const authContainer = document.querySelector(".auth-container");
-  const formTitle = authContainer.querySelector("h1");
-  const submitButton = authContainer.querySelector("button[type='submit']");
-  const form = authContainer.querySelector("form");
-
-  toggleLink.addEventListener("click", () => {
-    const isRegister = formTitle.textContent.includes("Register");
-    formTitle.textContent = isRegister ? "Login" : "Register";
-    submitButton.textContent = isRegister ? "Login" : "Register";
-    toggleLink.textContent = isRegister
-      ? "Don't have an account? Register"
-      : "Already have an account? Login";
-  });
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const name = form.querySelector("#name").value.trim();
-    const email = form.querySelector("#email").value.trim();
-    const password = form.querySelector("#password").value.trim();
-
-    if (formTitle.textContent.includes("Register") && !name) {
-      alert("Name is required.");
-      return;
-    }
-
-    if (!email || !validateEmail(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    if (!password) {
-      alert("Password is required.");
-      return;
-    }
-
-    alert(`${formTitle.textContent} successful!`);
-    // Optionally, you can submit the form here
-  });
-
-  function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-  }
-
-  document.querySelectorAll("a[href^='#']").forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-        });
-
-        targetElement.classList.add("slide-in-up");
-        setTimeout(() => {
-          targetElement.classList.remove("slide-in-up");
-        }, 1000);
-      }
-    });
-  });
-});
