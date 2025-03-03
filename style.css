@@ -877,7 +877,14 @@ textarea {
 .send-btn {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 40%;
+  padding: 0.5rem;
+  margin-inline: auto;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--color-white);
 }
 
 /* footer */
