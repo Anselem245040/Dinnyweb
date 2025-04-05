@@ -555,31 +555,13 @@ ul {
 }
 
 .card {
-  width: 200px;
+  width: 80%;
   flex-shrink: 0;
   background: var(--color-white);
   border-radius: 5px;
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 20px;
-  transition: transform 0.3s ease-in-out;
-  animation: float 3s ease-in-out infinite;
-}
-
-.card:hover {
-  transform: scale(1.05); /* Scale up on hover */
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .img-card {
@@ -627,14 +609,20 @@ ul {
 }
 
 .view {
-  width: 194px;
-  margin-inline: auto;
+  width: 10%;
+  margin: 0 auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.view button {
-  width: 194px;
+.view-btn {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .scroll-top {
@@ -877,7 +865,13 @@ textarea {
 .send-btn {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 20%;
+  margin-inline: auto;
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 0;
+  border-radius: 5px;
 }
 
 /* footer */
@@ -1191,32 +1185,20 @@ textarea {
   }
 
   .swiper {
-    width: 400px;
-    height: 300px;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .popular-card {
     width: 100%;
     display: flex;
-    overflow-x: auto;
+    flex-direction: column;
     gap: 10px;
-    scroll-snap-type: x mandatory;
     padding-bottom: 1rem; /* Add padding to avoid content cut-off */
   }
 
-  .popular-card::-webkit-scrollbar {
-    display: block; /* Show scrollbar for better UX */
-  }
-
-  .popular-card {
-    -ms-overflow-style: auto; /* IE and Edge */
-    scrollbar-width: auto; /* Firefox */
-  }
-
   .card {
-    width: 60%;
-    flex-shrink: 0;
-    scroll-snap-align: start;
+    width: 90%;
     background: var(--color-white);
     border-radius: 5px;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
@@ -1338,7 +1320,6 @@ textarea {
     align-items: center;
     gap: 2rem;
     text-align: center;
-    overflow-x: hidden; /* Remove scroll for large screens */
   }
 
   .card {
